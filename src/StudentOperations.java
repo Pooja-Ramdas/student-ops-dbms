@@ -6,7 +6,10 @@ public class StudentOperations {
 
     public void addStudent(Student student) {
         String query = "INSERT INTO students (name, prn, dob, marks) VALUES (?, ?, ?, ?)";
-        try (Connection conn = DBConnection.getConnection(); PreparedStatement pst = conn.prepareStatement(query)) {
+        try {
+                System.out.println("inside addStudent");
+                Connection conn = DBConnection.getConnection();
+                PreparedStatement pst = conn.prepareStatement(query);
             pst.setString(1, student.getName());
             pst.setLong(2, student.getPRN());
             pst.setString(3, student.getDob());

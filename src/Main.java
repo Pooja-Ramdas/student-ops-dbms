@@ -1,8 +1,19 @@
-// Main.java
+// Name : Pooja Ramdas
+// PRN No. : 23070126091
+// Batch : AIML B-1 (2023-2027)
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error: "+e.getMessage());
+        }
+
         Scanner sc = new Scanner(System.in);
         StudentOperations operations = new StudentOperations();
 
